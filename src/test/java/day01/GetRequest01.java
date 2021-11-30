@@ -6,5 +6,5 @@ public class GetRequest01 {
     // gonderildiginde donecek cevap(response) icin
     // HTTP status kodunun 200
     // Content Type nin Json
-    // status line nin HTTP7/1.1 200 OK oldugunu test ediniz
+    // status line nin HTTP7/1.1 200 OK oldugunu test ediniz.
 }
