@@ -23,12 +23,17 @@ public class GetRequest01 {
 
     // bu case de benden body istenmedigi icin simdilik beklenen sonuc olusturmuyoruz
     //3. request gonder
-   Response response=given().accept("application/json").when().get(url);
+   Response response=given().
+           accept("application/json").
+           when().
+           get(url);
+
+            response.prettyPrint();
 
     // 4.actuall result olustur
 
     //5.dogrulama yap(assertion)
-                response.prettyPrint();
+
 
 }
 
