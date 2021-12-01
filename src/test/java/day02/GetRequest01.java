@@ -29,7 +29,7 @@ public class GetRequest01 {
 
         response.prettyPrint();
 
-        response.then().
+     response.then().
                 assertThat().
                 statusCode(200).
                 contentType("application/json").
@@ -39,10 +39,6 @@ public class GetRequest01 {
                 body("depositpaid",Matchers.equalTo(true)).
                 body("bookingdates.checkin",Matchers.equalTo("2018-10-22")).
                 body("bookingdates.checkout",Matchers.equalTo("2020-05-14"));
-
-
-
-
 
     }
 
