@@ -46,7 +46,14 @@ public class GetRequest01 extends RestFulHerokuTestBase {
                 body("bookingdates.checkout",equalTo("2021-03-26"));
 */
         //JsonPath yontemi ile assert
+
+
         JsonPath jsonPath=response.jsonPath();
+        response.then().
+                assertThat().
+                statusCode(200).
+                contentType("application/json");
+
         Assert.assertEquals("Mary",jsonPath.getString("firstname"));
         Assert.assertEquals("Jones",jsonPath.getString("lastname"));
         Assert.assertEquals(179,jsonPath.getInt("totalprice"));
