@@ -6,6 +6,11 @@ import org.junit.Assert;
 import org.junit.Test;
 import testBase.DummyTestBase;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import static io.restassured.RestAssured.given;
 
 public class GetRequest03 extends DummyTestBase {
@@ -41,6 +46,17 @@ response.prettyPrint();
         Assert.assertEquals(200,response.getStatusCode());
         Assert.assertEquals("Airi Satou",jsonPath.getString("data[4].employee_name"));
         Assert.assertEquals(372000,jsonPath.getInt("data[5].employee_salary"));
+
+        Assert.assertTrue(jsonPath.getList("data.employee_name").contains("Rhona Davidson"));
+
+       // List<Integer> arananyaslar= Arrays.asList(21,23,61); bu sekilde de yazilabilir asagidaki gibi de yazilabilir
+
+        List<Integer> arananyaslar=new ArrayList<Integer>();
+        arananyaslar.add(21);
+        arananyaslar.add(23);
+        arananyaslar.add(61);
+
+       Assert.assertTrue(jsonPath.getList("data.employee_age").containsAll(arananyaslar));
 
     }
 
