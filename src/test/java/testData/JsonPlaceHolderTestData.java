@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class JsonPlaceHolderTestData {
 
+    //TestData
     public Map<String,Object> setUpTestData(){
     HashMap<String,Object> expectedData=new HashMap<String,Object>();
         expectedData.put("statusCode",200);
