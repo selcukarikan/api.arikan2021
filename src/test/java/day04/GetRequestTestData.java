@@ -54,6 +54,7 @@ header değerlerinden
 //2. yontem Jsonpath yontemi ile assertion islemi
 
         JsonPath jsonPath=response.jsonPath();
+
         Assert.assertEquals(expectedData.get("statusCode"),response.statusCode());
         Assert.assertEquals(expectedData.get("Via"),response.getHeader("via"));
         Assert.assertEquals(expectedData.get("Server"),response.getHeader("Server"));

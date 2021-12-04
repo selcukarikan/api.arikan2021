@@ -56,28 +56,29 @@ public class GetRequest01 extends RestFulHerokuTestBase {
         Assert.assertEquals(expectedDataMap.get("depositpaid"),actualDataMap.get("depositpaid"));
 
         Assert.assertEquals(
-                ((Map)expectedDataMap.get("bookingsdates")).
+                ((Map)expectedDataMap.get("bookingsDates")).
                 get("checkin"),
                 ((Map) actualDataMap.get("bookingdates")).get("checkin"));
 
         Assert.assertEquals(
-                ((Map)expectedDataMap.get("bookingdates")).
+                ((Map)expectedDataMap.get("bookingDates")).
                 get("checkout"),
                 ((Map) actualDataMap.get("bookingdates")).get("checkout"));
 
         //2.yol JsonPath
         JsonPath jsonPath=response.jsonPath();
+
         Assert.assertEquals(expectedDataMap.get("firstname"),jsonPath.getString("firstname"));
         Assert.assertEquals(expectedDataMap.get("lastname"),jsonPath.getString("lastname"));
         Assert.assertEquals(expectedDataMap.get("totalprice"),jsonPath.getInt("totalprice"));
         Assert.assertEquals(expectedDataMap.get("depositpaid"),jsonPath.getBoolean("depositpaid"));
 
         Assert.assertEquals(
-                ((Map)expectedDataMap.get("bookingdates")).get("checkin"),jsonPath.getString("bookingdates.checkin")
+                ((Map)expectedDataMap.get("bookingDates")).get("checkin"),jsonPath.getString("bookingdates.checkin")
         );
 
         Assert.assertEquals(
-                ((Map)expectedDataMap.get("bookingdates")).get("checkout"),jsonPath.getString("bookingdates.checkout")
+                ((Map)expectedDataMap.get("bookingDates")).get("checkout"),jsonPath.getString("bookingdates.checkout")
         );
 
 
