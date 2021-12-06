@@ -80,7 +80,7 @@ olduğunu test edin.
         expectedData.put("statusCode",200);
         expectedData.put("status","success");
        // expectedData.put("data", data);
-        expectedData.put("message","Succesfully! Record has been added.");
+        expectedData.put("message","Successfully! Record has been added.");
         return expectedData;
 
 

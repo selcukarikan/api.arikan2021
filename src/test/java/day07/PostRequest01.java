@@ -1,6 +1,8 @@
 package day07;
 
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.junit.Assert;
 import org.junit.Test;
 import testBase.DummyTestBase;
 import testData.DummyTestData;
@@ -41,12 +43,24 @@ olduğunu test edin
 
         Response response=given().
                 accept("application/json").
-                spec(spec01).
+                spec(spec01).auth().basic("admin","password123").
                 body(requestBodyMap).
                 when().
                 post("/{parametre1}");
 
         response.prettyPrint();
+
+        //DE Serialization
+
+        HashMap<String,Object> actualDataMap=response.as(HashMap.class);
+        Assert.assertEquals(expectedDataMap.get("statusCode"),response.getStatusCode());
+        Assert.assertEquals(expectedDataMap.get("status"),actualDataMap.get("status"));
+        Assert.assertEquals(expectedDataMap.get("message"),actualDataMap.get("message"));
+
+        //JsonPath
+        JsonPath jsonPath=response.jsonPath();
+        Assert.assertEquals(expectedDataMap.get("status"),jsonPath.get("status"));
+        Assert.assertEquals(expectedDataMap.get("message"),jsonPath.get("message"));
 
     }
 }
