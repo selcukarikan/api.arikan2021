@@ -57,8 +57,33 @@ olduğunu test edin.
     HashMap<String, Integer> expectedData=new HashMap<String,Integer>();
     expectedData.put("statusCode",200);
     expectedData.put("enKucukYas",19);
-    expectedData.put("enYuksekMaas",725000);
+    expectedData.put("enYuksekMaas",320800);
     expectedData.put("enYuksekIkinciMaas",675000);
     return expectedData;
+    }
+    public HashMap<String, String> setUpRequestBody(){
+        HashMap<String,String> requestBody=new HashMap<String,String>();
+    requestBody.put("name","Selcuk");
+    requestBody.put("salary","65000");
+    requestBody.put("age","36");
+    return requestBody;
+
+
+    }
+    public HashMap<String, Object> setUpExpectedData (){
+        //  HashMap<String,String> data=new HashMap<String ,String>();
+        // data.put("name","Selcuk");
+        // data.put("salary","65000");
+        // data.put("age","36");
+
+        HashMap<String,Object> expectedData=new HashMap<String,Object>();
+        expectedData.put("statusCode",200);
+        expectedData.put("status","success");
+       // expectedData.put("data", data);
+        expectedData.put("message","Succesfully! Record has been added.");
+        return expectedData;
+
+
+
     }
 }
