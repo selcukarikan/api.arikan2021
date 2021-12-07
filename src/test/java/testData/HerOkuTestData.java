@@ -1,5 +1,9 @@
 package testData;
 
+import com.google.gson.JsonObject;
+import org.codehaus.jackson.map.util.JSONPObject;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 
 public class HerOkuTestData {
@@ -29,6 +33,32 @@ public class HerOkuTestData {
         expectedData.put("bookingdates",bookingDates);
 
         return expectedData;
+
+
+
+    }
+    //     "firstname": " Selcuk  ",
+    //         "lastname": " Arikan ",
+    //         "totalprice":  123456,
+    //         "depositpaid": true,
+    //         "bookingdates": {
+    //             "checkin": "2020-09-01",
+    //              "checkout": " 2020-09-21”
+
+    public JSONObject setUpTestAndRequest(){
+
+        JSONObject bookingDates=new JSONObject();
+        bookingDates.put("checkin","2020-09-01");
+        bookingDates.put("checkout","2020-09-21");
+
+
+        JSONObject expectedRequest= new JSONObject();
+        expectedRequest.put("firstname","Selcuk");
+        expectedRequest.put("lastname","Arikan");
+        expectedRequest.put("totalprice",123456);
+        expectedRequest.put("depositpaid",true);
+        expectedRequest.put("bookingdates",bookingDates);
+        return expectedRequest;
 
 
 
