@@ -1,5 +1,7 @@
 package testData;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -67,20 +69,22 @@ olduğunu test edin.
     requestBody.put("salary","65000");
     requestBody.put("age","36");
     return requestBody;
-
-
     }
     public HashMap<String, Object> setUpExpectedData (){
-        //  HashMap<String,String> data=new HashMap<String ,String>();
-        // data.put("name","Selcuk");
-        // data.put("salary","65000");
-        // data.put("age","36");
-
         HashMap<String,Object> expectedData=new HashMap<String,Object>();
         expectedData.put("statusCode",200);
         expectedData.put("status","success");
        // expectedData.put("data", data);
         expectedData.put("message","Successfully! Record has been added.");
+        return expectedData;
+    }
+
+
+    public JSONObject setUpDeleteExpected(){
+        JSONObject expectedData=new JSONObject();
+        expectedData.put("status","success");
+        expectedData.put("data",2);
+        expectedData.put("message","Successfully! Record has been deleted");
         return expectedData;
 
 
