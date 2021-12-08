@@ -38,4 +38,20 @@ public class JsonPlaceHolderTestData {
         expectedRequest.put("title","Wash the dishes");
         expectedRequest.put("completed",false);
     }
-}
+
+    public  JSONObject setUpPatchRequestData(){
+        JSONObject requestData=new JSONObject();
+        requestData.put("title","API ist gleicg spaß");
+        return requestData;
+
+
+    }
+    public JSONObject setUpPatchExpectedData() {
+        JSONObject expectedRequest = new JSONObject();
+        expectedRequest.put("userId", 10);
+        expectedRequest.put("completed", true);
+        expectedRequest.put("id", 198);
+        expectedRequest.put("title", "API ist gleicg spaß");
+        return expectedRequest;
+
+    }}
