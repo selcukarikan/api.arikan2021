@@ -41,6 +41,7 @@ GET Request to the URL http://dummy.restapiexample.com/api/v1/employee/1
         response.prettyPrint();
 
         DummyPojo actualData=response.as(DummyPojo.class);
+
         System.out.println(actualData);
 
     }
