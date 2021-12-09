@@ -1,7 +1,9 @@
 package day10;
 
+import com.google.gson.Gson;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.junit.Assert;
 import org.junit.Test;
 import pojos.Data;
 import pojos.DummyPojo;
@@ -43,6 +45,36 @@ GET Request to the URL http://dummy.restapiexample.com/api/v1/employee/1
         DummyPojo actualData=response.as(DummyPojo.class);
 
         System.out.println(actualData);
+
+        Assert.
+                assertEquals(200,response.getStatusCode());
+
+        Assert.
+                assertEquals(expextedData.getStatus(),
+                        actualData.getStatus());
+
+        Assert.
+                assertEquals(expextedData.getData().getemployee_name(),
+                        actualData.getData().getemployee_name());
+
+        Assert.
+                assertEquals(expextedData.getData().
+                        getId(),actualData.getData().getId());
+
+        Assert.
+                assertEquals(expextedData.getData().getemployee_age(),
+                        actualData.getData().getemployee_age());
+
+        Assert.
+                assertEquals(expextedData.getData().getprofile_image(),
+                        actualData.getData().getprofile_image());
+
+        //Serialization java yapisinda olan datalari json formatina donusturme islemidir.
+        //Gson sinifindan bir obje uretilir
+
+        Gson gson=new Gson();
+        String jsonFormJava=gson.toJson(actualData);
+        System.out.println(jsonFormJava);
 
     }
 }
