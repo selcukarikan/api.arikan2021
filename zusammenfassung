@@ -1,0 +1,17 @@
+html taglari -- ---web elementleri
+130 farkli webelement vardir
+<h1>
+<input>
+<button>
+<img src=" .....  "  / >
+<a>
+<strong>
+< div >
+<span>
+<i>
+
+<div class=" baslik" id=" title" > selcuk arikan </div>
+
+tag ismi =div
+attribute = class, id
+icerik= selcuk arikan
