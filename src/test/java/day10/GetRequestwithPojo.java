@@ -16,6 +16,7 @@ public class GetRequestwithPojo extends DummyTestBase {
 GET Request to the URL http://dummy.restapiexample.com/api/v1/employee/1
                             Status code is 200
                                  {
+                                 -----
                                   "status": "success",
                                   "data": {
                                       "id": 1,
